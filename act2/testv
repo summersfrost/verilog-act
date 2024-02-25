@@ -1,0 +1,115 @@
+#! c:/iverilog-x64/bin/vvp
+:ivl_version "10.1 (stable)" "(v10_1_1)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000126e9b0 .scope module, "fullAdder" "fullAdder" 2 10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X"
+    .port_info 1 /INPUT 1 "Y"
+    .port_info 2 /INPUT 1 "Z"
+    .port_info 3 /OUTPUT 1 "S"
+    .port_info 4 /OUTPUT 1 "C"
+L_0000000000921e70 .functor OR 1, L_0000000000921c90, L_0000000000921d00, C4<0>, C4<0>;
+v0000000000892bb0_0 .net "C", 0 0, L_0000000000921e70;  1 drivers
+v0000000000892c50_0 .net "S", 0 0, L_0000000000921e00;  1 drivers
+o00000000008d02f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000000920a80_0 .net "X", 0 0, o00000000008d02f8;  0 drivers
+o00000000008d0328 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000000921660_0 .net "Y", 0 0, o00000000008d0328;  0 drivers
+o00000000008d01d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000000920e40_0 .net "Z", 0 0, o00000000008d01d8;  0 drivers
+v0000000000920ee0_0 .net "carryWire", 0 0, L_0000000000921c90;  1 drivers
+v00000000009212a0_0 .net "carryWire1", 0 0, L_0000000000921d00;  1 drivers
+v00000000009209e0_0 .net "sumWire", 0 0, L_00000000008933f0;  1 drivers
+o00000000008d0058 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000000920b20_0 .net "x", 0 0, o00000000008d0058;  0 drivers
+o00000000008d0088 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000009217a0_0 .net "y", 0 0, o00000000008d0088;  0 drivers
+S_00000000008c5eb0 .scope module, "ha0" "halfAdder" 2 15, 2 1 0, S_000000000126e9b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X"
+    .port_info 1 /INPUT 1 "Y"
+    .port_info 2 /OUTPUT 1 "S"
+    .port_info 3 /OUTPUT 1 "C"
+L_00000000008933f0 .functor XOR 1, o00000000008d0058, o00000000008d0088, C4<0>, C4<0>;
+L_0000000000921c90 .functor AND 1, o00000000008d0058, o00000000008d0088, C4<1>, C4<1>;
+v000000000126ecb0_0 .net "C", 0 0, L_0000000000921c90;  alias, 1 drivers
+v00000000008ce640_0 .net "S", 0 0, L_00000000008933f0;  alias, 1 drivers
+v00000000008c6030_0 .net "X", 0 0, o00000000008d0058;  alias, 0 drivers
+v00000000008c60d0_0 .net "Y", 0 0, o00000000008d0088;  alias, 0 drivers
+S_00000000008928f0 .scope module, "ha1" "halfAdder" 2 16, 2 1 0, S_000000000126e9b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X"
+    .port_info 1 /INPUT 1 "Y"
+    .port_info 2 /OUTPUT 1 "S"
+    .port_info 3 /OUTPUT 1 "C"
+L_0000000000921d00 .functor XOR 1, L_00000000008933f0, o00000000008d01d8, C4<0>, C4<0>;
+L_0000000000921e00 .functor AND 1, L_00000000008933f0, o00000000008d01d8, C4<1>, C4<1>;
+v00000000008c6170_0 .net "C", 0 0, L_0000000000921e00;  alias, 1 drivers
+v00000000008c6210_0 .net "S", 0 0, L_0000000000921d00;  alias, 1 drivers
+v0000000000892a70_0 .net "X", 0 0, L_00000000008933f0;  alias, 1 drivers
+v0000000000892b10_0 .net "Y", 0 0, o00000000008d01d8;  alias, 0 drivers
+S_000000000126eb30 .scope module, "fullAdder_testbench" "fullAdder_testbench" 2 78;
+ .timescale 0 0;
+v00000000009213e0_0 .net "C", 0 0, L_0000000000921f50;  1 drivers
+v0000000000921020_0 .net "S", 0 0, L_0000000000921ee0;  1 drivers
+v00000000009210c0_0 .net "X", 0 0, v0000000000920c60_0;  1 drivers
+v0000000000921700_0 .net "Y", 0 0, v0000000000920da0_0;  1 drivers
+S_0000000000921990 .scope module, "GASG" "gatelevel_stimulus_generator" 2 82, 2 54 0, S_000000000126eb30;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "x"
+    .port_info 1 /OUTPUT 1 "y"
+v0000000000920c60_0 .var "x", 0 0;
+v0000000000920da0_0 .var "y", 0 0;
+S_0000000000921b10 .scope module, "ha" "halfAdder" 2 80, 2 1 0, S_000000000126eb30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X"
+    .port_info 1 /INPUT 1 "Y"
+    .port_info 2 /OUTPUT 1 "S"
+    .port_info 3 /OUTPUT 1 "C"
+L_0000000000921ee0 .functor XOR 1, v0000000000920c60_0, v0000000000920da0_0, C4<0>, C4<0>;
+L_0000000000921f50 .functor AND 1, v0000000000920c60_0, v0000000000920da0_0, C4<1>, C4<1>;
+v0000000000921160_0 .net "C", 0 0, L_0000000000921f50;  alias, 1 drivers
+v0000000000920bc0_0 .net "S", 0 0, L_0000000000921ee0;  alias, 1 drivers
+v0000000000920f80_0 .net "X", 0 0, v0000000000920c60_0;  alias, 1 drivers
+v0000000000920d00_0 .net "Y", 0 0, v0000000000920da0_0;  alias, 1 drivers
+    .scope S_0000000000921990;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000920c60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000920da0_0, 0, 1;
+    %vpi_call 2 63 "$dumpfile", "testv.vcd" {0 0 0};
+    %vpi_call 2 64 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000920c60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000920da0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000920c60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000920da0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000920c60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000920da0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000920c60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000920da0_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call 2 74 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "testv.v";

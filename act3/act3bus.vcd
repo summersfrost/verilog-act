@@ -1,0 +1,133 @@
+$date
+	Thu Mar 07 09:45:14 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module act3bus_testbench $end
+$var wire 1 ! out $end
+$var wire 1 " D $end
+$var wire 1 # C $end
+$var wire 1 $ B $end
+$var wire 1 % A $end
+$scope module bus $end
+$var reg 1 % A $end
+$var reg 1 $ B $end
+$var reg 1 # C $end
+$var reg 1 " D $end
+$upscope $end
+$scope module gl $end
+$var wire 1 % A $end
+$var wire 1 $ B $end
+$var wire 1 # C $end
+$var wire 1 " D $end
+$var wire 1 ! out $end
+$var wire 2 & wireOut [1:0] $end
+$scope module sec1 $end
+$var wire 1 % A $end
+$var wire 1 $ B $end
+$var wire 1 # C $end
+$var wire 1 " D $end
+$var wire 1 ' out $end
+$var wire 2 ( wireOut [1:0] $end
+$upscope $end
+$scope module sec2 $end
+$var wire 1 # A $end
+$var wire 1 " B $end
+$var wire 1 % C $end
+$var wire 1 $ D $end
+$var wire 1 ) out $end
+$var wire 2 * wireOut [1:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 *
+0)
+b0 (
+0'
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#2
+b1 (
+1"
+#4
+0"
+1#
+#6
+b10 *
+1"
+#8
+b0 (
+b1 *
+0"
+0#
+1$
+#10
+b1 (
+1"
+#12
+0"
+1#
+#14
+1!
+b1 &
+1)
+b11 *
+1"
+#16
+0!
+b0 &
+0)
+b0 (
+b1 *
+0"
+0#
+0$
+1%
+#18
+b1 (
+1"
+#20
+0"
+1#
+#22
+1!
+b1 &
+1)
+b11 *
+1"
+#24
+0!
+b0 &
+0)
+b1 *
+b10 (
+0"
+0#
+1$
+#26
+1!
+b10 &
+1'
+b11 (
+1"
+#28
+0"
+1#
+#30
+b11 &
+1)
+b11 *
+1"
+#32

@@ -1,0 +1,190 @@
+#include <SoftwareSerial.h> // TX RX software library for bluetooth
+#include <Servo.h> // servo library 
+
+Servo leftAileron;
+Servo rightAileron;
+Servo elevator;
+Servo radder;
+
+
+
+int bluetoothTx = 7; // bluetooth tx to 10 pin
+int bluetoothRx = 8; // bluetooth rx to 11 pin
+int leftAileronPin= 3;
+int rightAileronPin= 5;
+int elevatorPin=9;
+int radderPin= 10;
+int brushless = 11;
+
+int leftAileronAngle=100;
+int rightAileronAngle=100;
+int elevatorAngle=128;
+int radderAngle=45;
+int speed=0;
+
+    int data;
+SoftwareSerial bluetooth(bluetoothTx, bluetoothRx);
+
+void setup()
+{
+  leftAileron.attach(leftAileronPin); // attach servo signal wire to pin 9
+  rightAileron.attach(rightAileronPin);
+  elevator.attach(elevatorPin);
+  radder.attach(radderPin);
+
+  leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+  //Setup usb serial connection to computer
+  Serial.begin(9600);
+
+  //Setup Bluetooth serial connection to android
+  bluetooth.begin(9600);
+}
+void loop()
+{
+  // Read from bluetooth and write to USB serial
+  if (bluetooth.available() > 0) // receive number from bluetooth
+  {
+    data = bluetooth.read(); // save the received number to data
+
+    // Control the servo based on the received data
+    if (data == 1) {
+      
+int leftAileronAngle=100;
+int rightAileronAngle=10;
+int elevatorAngle=18;
+int radderAngle=45;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("Upright");
+    }
+    else if (data == 2) {
+
+      
+int leftAileronAngle=142;
+int rightAileronAngle=120;
+int elevatorAngle=158;
+int radderAngle=33;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("Upleft");
+    }
+    else if (data == 3) {
+
+      
+int leftAileronAngle=50;
+int rightAileronAngle=160;
+int elevatorAngle=118;
+int radderAngle=15;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("Downleft");
+    }
+    else if (data == 4) {
+
+      
+int leftAileronAngle=100;
+int rightAileronAngle=100;
+int elevatorAngle=128;
+int radderAngle=45;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("DownRight");
+    }
+    else if (data == 5) {
+
+      
+int leftAileronAngle=100;
+int rightAileronAngle=100;
+int elevatorAngle=128;
+int radderAngle=45;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("Up");
+    }
+    else if (data == 6) {
+
+      
+int leftAileronAngle=100;
+int rightAileronAngle=100;
+int elevatorAngle=128;
+int radderAngle=45;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("Down");
+    }
+    else if (data == 7) {
+
+int leftAileronAngle=100;
+int rightAileronAngle=100;
+int elevatorAngle=128;
+int radderAngle=45;
+
+        leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      Serial.println("Right");
+    }
+    else if (data == 8) {
+
+      
+int leftAileronAngle=100;
+int rightAileronAngle=100;
+int elevatorAngle=128;
+int radderAngle=45;
+
+      Serial.println("Left");
+
+  leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+      // Radder 45 original position
+      // right 135
+      // left 3
+
+      // elevator original 128
+      // elevator down 170
+      // elevator up 90
+
+      // aileron right original 100
+      // aileron right up 135
+      // aileron right 135
+      // aileron down 85
+      // aileron right 55
+      // elevator
+    }
+    else if (data >9 && data < 191){
+      speed= speed-10;
+  leftAileron.write(leftAileronAngle);
+  rightAileron.write(rightAileronAngle);
+  elevator.write(elevatorAngle);
+  radder.write(radderAngle);
+    }
+    else {
+      Serial.println("No Controls");
+      
+    }
+  }
+}

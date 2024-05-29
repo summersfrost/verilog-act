@@ -1,0 +1,91 @@
+$date
+	Tue May 21 15:10:29 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test_shift_register $end
+$var wire 1 ! Sout $end
+$var reg 1 " Clk $end
+$var reg 8 # Din [7:0] $end
+$var reg 1 $ Load $end
+$var reg 1 % ShiftR $end
+$var reg 1 & Sin $end
+$var reg 1 ' nReset $end
+$scope module u1 $end
+$var wire 1 " Clk $end
+$var wire 8 ( Din [7:0] $end
+$var wire 1 $ Load $end
+$var wire 1 % ShiftR $end
+$var wire 1 & Sin $end
+$var wire 1 ' nReset $end
+$var wire 1 ! Sout $end
+$var reg 8 ) shift_reg [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 )
+b0 (
+0'
+0&
+0%
+0$
+b0 #
+0"
+0!
+$end
+#5
+1"
+#10
+0"
+1'
+#15
+1"
+#20
+0"
+b10101010 #
+b10101010 (
+1$
+#25
+b10101010 )
+1"
+#30
+0"
+1&
+1%
+0$
+#35
+1!
+b11010101 )
+1"
+#40
+0"
+#45
+0!
+b11101010 )
+1"
+#50
+0"
+#55
+1!
+b11110101 )
+1"
+#60
+0"
+#65
+0!
+b11111010 )
+1"
+#70
+0"
+#75
+1!
+b11111101 )
+1"
+#80
+0"
